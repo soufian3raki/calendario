@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
         //Traducir al español
         locale: "es",
         timeZone: '',
+        weekNumbers: true,
+        dayMaxEvents: true,
+        themeSystem: 'bootstrap5',
         //Opciones del calendario
         headerToolbar: {
             left: 'prev,next today',

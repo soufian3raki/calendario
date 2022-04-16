@@ -6,16 +6,12 @@
 
     </div>
 </div>
-<!-- Button trigger modal-->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#evento">
-    Launch demo modal
-</button>
 <!-- Modal -->
 <div class="modal fade" id="evento" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Datos del Caledario</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -25,11 +21,11 @@
                 {{ csrf_field() }}
 
                 <div class="modal-body">
-                    <div class="form-group">
+                    <div class="form-group d-none">
                         <label for="id">ID</label>
                         <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId"
                             placeholder="">
-                        <small id="helpId" class="form-text text-muted">Help text</small>
+                        <small id="helpId" class="form-text text-muted"></small>
                     </div>
 
                     <div class="form-group">
