@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
         },
+        events: "http://localhost/agenda/public/evento/mostrar",
         dateClick: function (info) {
             $("#evento").modal("show");
         }
