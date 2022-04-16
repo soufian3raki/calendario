@@ -19,5 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Ruta para mostrar el calendario
 Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index']);
+Route::post('/evento/agregar', [App\Http\Controllers\EventoController::class, 'store']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
