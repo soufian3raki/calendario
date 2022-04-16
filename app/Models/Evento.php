@@ -11,8 +11,8 @@ class Evento extends Model
 
     // Valida que los campos sean obligatorios para guardar en la base de datos
     static $rules = [
-        'title' => 'required|min:3|max:255',
-        'descripcion' => 'required|min:3|max:500',
+        'title' => 'max:255',
+        'descripcion' => 'max:500',
         'start' => 'required|date',
         'end' => 'required|date',
     ];

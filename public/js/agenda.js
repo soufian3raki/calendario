@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         weekNumbers: true,
         dayMaxEvents: true,
         themeSystem: 'bootstrap5',
+        eventColor: '#fd0d0d',
         //Opciones del calendario
         headerToolbar: {
             left: 'prev,next today',

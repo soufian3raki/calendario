@@ -17,8 +17,13 @@ return new class extends Migration
             $table->id();
 
             // Datos que puede escribir el usuario
-            $table->string('title', 255);
-            $table->text('descripcion');
+            /* 
+            * Teniendo en cuenta que el calendario de Google
+            * admite guardar eventos nullos, los campos
+            ! title y descripcion son opcionales.
+            */
+            $table->string('title', 255)->nullable();
+            $table->text('descripcion')->nullable();
 
             // Fichas de los eventos
             $table->dateTime('start');
