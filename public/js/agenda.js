@@ -25,6 +25,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const datos = new FormData(formulario);
         console.log(datos);
 
-
+        axios.post("http://localhost/calendar/public/evento/agregar", datos).
+            then(
+                (respuesta) => {
+                    $('#evento').modal('hide');
+                }
+            ).catch(
+                error => {
+                    if (error.response) {
+                        console.log(error.response.data);
+                    }
+                }
+            )
     });
 });
