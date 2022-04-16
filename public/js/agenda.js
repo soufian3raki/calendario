@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Obtener la URL del evento
+    const url_base = "/agenda/public";
     // Recolectar los datos del formulario
     let formulario = document.querySelector('form');
 
@@ -35,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let evento = info.event;
 
             // Obtiene la respuesta del servidor
-            axios.post("http://localhost/agenda/public/evento/editar/" + info.event.id).
+            axios.post(url_base + "/evento/editar/" + info.event.id).
                 then(
                     (respuesta) => {
 
@@ -73,26 +75,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Guardar el evento
     document.getElementById("btnGuardar").addEventListener("click", function () {
-        enviarDatos("http://localhost/agenda/public/evento/agregar");
+        enviarDatos("/evento/agregar");
     });
 
     // Editar el evento
     document.getElementById("btnEliminar").addEventListener("click", function () {
-        enviarDatos("http://localhost/agenda/public/evento/borrar/" + formulario.id.value);
+        enviarDatos("/evento/borrar/" + formulario.id.value);
     });
 
     // Modificar el evento
     document.getElementById("btnModificar").addEventListener("click", function () {
-        enviarDatos("http://localhost/agenda/public/evento/actualizar/" + formulario.id.value);
+        enviarDatos("/evento/actualizar/" + formulario.id.value);
     });
 
     // funcion para validar el formulario
     function enviarDatos(url) {
-        //Recolectar los datos del formulario
+        // Recolectar los datos del formulario
         const datos = new FormData(formulario);
 
-        //Crear el objeto
-        axios.post(url, datos).
+        // Obtener la URL del evento
+        const url_evento = url_base + url;
+
+        console.log(url_evento);
+
+        // Crear el objeto
+        axios.post(url_evento, datos).
             then(
                 (respuesta) => {
                     // Actuelizar el calendario
@@ -102,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     $('#evento').modal('hide');
                 }
             ).catch(
+                // Mostrar el error
                 error => {
                     if (error.response) {
                         console.log(error.response.data);
