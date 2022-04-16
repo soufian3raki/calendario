@@ -23,5 +23,6 @@ Auth::routes();
 Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index']);
 Route::get('/evento/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
 Route::post('/evento/agregar', [App\Http\Controllers\EventoController::class, 'store']);
+Route::post('/evento/editar/{id}', [App\Http\Controllers\EventoController::class, 'edit']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

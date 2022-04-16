@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         initialView: 'dayGridMonth',
         //Traducir al español
         locale: "es",
+        timeZone: '',
         //Opciones del calendario
         headerToolbar: {
             left: 'prev,next today',
@@ -29,6 +30,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
             //Mostrar el modal
             $("#evento").modal("show");
+        },
+        eventClick: function (info) {
+            let evento = info.event;
+
+            // Obtiene la respuesta del servidor
+            axios.post("http://localhost/agenda/public/evento/editar/" + info.event.id).
+                then(
+                    (respuesta) => {
+
+                        // Obtener el id del evento
+                        formulario.id.value = respuesta.data.id;
+                        // Obtener el titulo del evento
+                        formulario.title.value = respuesta.data.title;
+                        // Obtener la descripcion del evento
+                        formulario.descripcion.value = respuesta.data.descripcion;
+                        // Obtener la fecha y la hora
+                        formulario.start.value = respuesta.data.start;
+                        formulario.end.value = respuesta.data.end;
+                        // Formulario.color.value = respuesta.data.color;
+
+                        /*//! ******************************
+                        //TODO: Falta el color
+                        //TODO: Fatlta Formato de fecha
+                        //! ******************************/
+
+                        // Mostrar el modal
+                        $('#evento').modal('show');
+                    }
+                ).catch(
+                    error => {
+                        if (error.response) {
+                            console.log(error.response.data);
+                        }
+                    }
+                )
         }
     });
 
