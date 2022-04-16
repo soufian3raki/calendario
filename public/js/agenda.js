@@ -71,15 +71,22 @@ document.addEventListener('DOMContentLoaded', function () {
     //Mostrar el calendario
     calendar.render();
 
-    //Validar el formulario
+    // Guardar el evento
     document.getElementById("btnGuardar").addEventListener("click", function () {
         enviarDatos("http://localhost/agenda/public/evento/agregar");
     });
 
+    // Editar el evento
     document.getElementById("btnEliminar").addEventListener("click", function () {
         enviarDatos("http://localhost/agenda/public/evento/borrar/" + formulario.id.value);
     });
 
+    // Modificar el evento
+    document.getElementById("btnModificar").addEventListener("click", function () {
+        enviarDatos("http://localhost/agenda/public/evento/actualizar/" + formulario.id.value);
+    });
+
+    // funcion para validar el formulario
     function enviarDatos(url) {
         //Recolectar los datos del formulario
         const datos = new FormData(formulario);
