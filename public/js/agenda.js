@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         },
+        dateClick: function (info) {
+            $("#evento").modal("show");
+        }
     });
     calendar.render();
 });
