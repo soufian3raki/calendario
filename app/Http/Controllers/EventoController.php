@@ -50,8 +50,9 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
-        //
+        // Mostrar el evento
         $evento = Evento::all();
+        // return $evento;
         return response()->json($evento);
     }
 
@@ -63,8 +64,9 @@ class EventoController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Buscar el evento
         $evento = Evento::find($id);
+        // Mostrar la vista de edición
         return response()->json($evento);
     }
 
@@ -86,8 +88,11 @@ class EventoController extends Controller
      * @param  \App\Models\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Evento $evento)
+    public function destroy($id)
     {
-        //
+        // Borrar el evento
+        $evento = Evento::find($id)->delete();
+        // Retornar la respuesta
+        return response()->json($evento);
     }
 }

@@ -73,13 +73,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Validar el formulario
     document.getElementById("btnGuardar").addEventListener("click", function () {
+        enviarDatos("http://localhost/agenda/public/evento/agregar");
+    });
 
+    document.getElementById("btnEliminar").addEventListener("click", function () {
+        enviarDatos("http://localhost/agenda/public/evento/borrar/" + formulario.id.value);
+    });
+
+    function enviarDatos(url) {
         //Recolectar los datos del formulario
         const datos = new FormData(formulario);
-        console.log(datos);
 
         //Crear el objeto
-        axios.post("http://localhost/agenda/public/evento/agregar", datos).
+        axios.post(url, datos).
             then(
                 (respuesta) => {
                     // Actuelizar el calendario
@@ -95,5 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             )
-    });
+    }
+
+
 });
