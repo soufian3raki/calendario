@@ -40,8 +40,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="descripcon">Descripción</label>
-                        <textarea class="form-control" name="descripcon" id="descripcon" rows="3"></textarea>
+                        <label for="descripcion">Descripción</label>
+                        <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
                     </div>
 
                     <div class="form-group">
