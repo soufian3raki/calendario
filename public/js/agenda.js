@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         initialView: 'dayGridMonth',
         //Traducir al español
         locale: "es",
+        displayEventTime: false,
         timeZone: '',
         weekNumbers: true,
         dayMaxEvents: true,
@@ -120,6 +121,4 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             )
     }
-
-
 });

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('title', 'Calendario')
+
 @section('content')
 
 <div class="container">
@@ -16,9 +19,9 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="">
+            <form action="" class="row g-3 needs-validation" novalidate>
 
-                {{ csrf_field() }}
+                @csrf
 
                 <div class="modal-body">
                     <div class="form-group d-none">
@@ -29,10 +32,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="title"></label>
+                        <label for="title">Titulo</label>
                         <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
-                            placeholder="Escribe el titulo del evito">
-                        <small id="helpId" class="form-text text-muted">Help text</small>
+                            required>
+                        <small class="form-text text-muted color-danger">jgvgvfjg</small>
+                        @error('title')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
                     </div>
 
                     <div class="form-group">
