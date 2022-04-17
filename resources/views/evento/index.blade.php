@@ -35,7 +35,7 @@
                         <label for="title">Titulo</label>
                         <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
                             required>
-                        <small class="form-text text-muted color-danger">jgvgvfjg</small>
+                        <small class="form-text text-muted color-danger"></small>
                         @error('title')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -51,17 +51,20 @@
                         <label for="start">Start</label>
                         <input type="text" class="form-control" name="start" id="start" aria-describedby="helpId"
                             placeholder="">
-                        <small id="helpId" class="form-text text-muted">Help text</small>
+                        <small id="helpId" class="form-text text-muted"></small>
                     </div>
 
                     <div class="form-group">
                         <label for="end">End</label>
                         <input type="text" class="form-control" name="end" id="end" aria-describedby="helpId"
                             placeholder="">
-                        <small id="helpId" class="form-text text-muted">Help text</small>
+                        <small id="helpId" class="form-text text-muted"></small>
                     </div>
 
+                    <!-- colores -->
                     <div class="form-group d-flex justify-content-center">
+
+                        <label for="color"></label>
                         <div class="custom-radios">
                             <div>
                                 <input type="radio" id="color-1" name="color" value="#0aba53" checked>
