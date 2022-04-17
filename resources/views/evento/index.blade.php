@@ -60,7 +60,62 @@
                             placeholder="">
                         <small id="helpId" class="form-text text-muted">Help text</small>
                     </div>
+
+                    <div class="form-group d-flex justify-content-center">
+                        <div class="custom-radios">
+                            <div>
+                                <input type="radio" id="color-1" name="color" value="#0aba53" checked>
+                                <label for="color-1">
+                                    <span>
+                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                                            alt="Checked Icon" />
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="color-2" name="color" value="#0099ff">
+                                <label for="color-2">
+                                    <span>
+                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                                            alt="Checked Icon" />
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="color-3" name="color" value="#928b00">
+                                <label for="color-3">
+                                    <span>
+                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                                            alt="Checked Icon" />
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="color-4" name="color" value="#e74c3c">
+                                <label for="color-4">
+                                    <span>
+                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                                            alt="Checked Icon" />
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="color-5" name="color" value="#c300ff">
+                                <label for="color-5">
+                                    <span>
+                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg"
+                                            alt="Checked Icon" />
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" id="btnGuardar">
                         Guardar

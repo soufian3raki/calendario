@@ -13,6 +13,7 @@ class Evento extends Model
     static $rules = [
         'title' => 'max:255',
         'descripcion' => 'max:500',
+        'color' => 'max:7',
         'start' => 'required|date',
         'end' => 'required|date',
     ];
@@ -21,6 +22,7 @@ class Evento extends Model
     protected $fillable = [
         'title',
         'descripcion',
+        'color',
         'start',
         'end',
     ];

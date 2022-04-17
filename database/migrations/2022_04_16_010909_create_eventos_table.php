@@ -25,6 +25,9 @@ return new class extends Migration
             $table->string('title', 255)->nullable();
             $table->text('descripcion')->nullable();
 
+            // color
+            $table->string('color', 7)->nullable();
+
             // Fichas de los eventos
             $table->dateTime('start');
             $table->dateTime('end');
