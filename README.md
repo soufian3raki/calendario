@@ -1,64 +1,82 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://laravel.com/docs/9.x"><img src="https://img.shields.io/badge/Laravel-v9.2-blue" alt="Total Downloads"></a>
+<a href="https://www.php.net/docs.php"><img src="https://img.shields.io/badge/PHP-v8.0.2-blue" alt="Latest Stable Version"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue" alt="License"></a>
+<a href="https://www.mysql.com/"><img src="https://img.shields.io/badge/-MySQL-blue" alt="License"></a>
+<a href="https://getbootstrap.com/docs/5.0/getting-started/download/"><img src="https://img.shields.io/badge/Bootstrap-5-blue" alt="License"></a>
+<a href="https://github.com/fullcalendar"><img src="https://img.shields.io/badge/Fullcalendar-v5.11.0-blue" alt="License"></a>
 </p>
 
-## About Laravel
+## Instalación
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Una vez hayamos clonado el repositorio de nuestro proyecto Laravel en local, debemos hacer los siguientes ajustes para que éste pueda correr en nuestro equipo.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Instalar dependencias
+- Crear una base de datos
+- Crear el archivo .env
+- Generar una clave
+- Migrar y sembrar la base de datos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Instalar dependencias
 
-## Learning Laravel
+Instalaremos con [Composer](), el manejador de dependencias para PHP, las dependencias definidos en el archivo `composer.json`. Para ello abriremos una terminal en la `carpeta del proyecto` y ejecutaremos:
+```
+composer install
+```
+También debemos instalar las dependencias de NPM definidas en el archivo `package.json` con:
+```
+npm install
+```
+## Crear una base de datos que soporte Laravel
+Entre las `bases de datos` que soporta `Laravel por defecto`, encontramos: MySQL, SQL Lite, PostgreSQL y SQL Server.
+## Crear el archivo .env
+Podemos duplicar el archivo `.env.example`, renombrarlo a `.env` e incluir los datos de conexión de la base de datos que indicamos en el paso anterior.
+### ejemplo archivo .env
+```
+..... 
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=calendario
+DB_USERNAME=root
+DB_PASSWORD=toor
+....
+```
+## Generar una clave
+La `clave de aplicación` es una cadena aleatoria almacenada en la clave APP_KEY dentro del archivo `.env`.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Para crear la nueva clave e insertarla automáticamente en el .env, ejecutaremos:
+```
+php artisan key:generate
+```
+## Ejecutar migraciones
+Por último, ejecutamos las migraciones para que se generen las tablas con:
+```
+php artisan migrate 
+```
+Si tuvieramos que incluir o crear nuevas migraciones utilizaríamos:
+```
+php artisan migrate:refresh 
+php artisan migrate:fresh  //borra y crea todas las tablas de nuevo
+```
+Con esto ya tendría que correr sin problemas la aplicación de Laravel que hemos clonado.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Calendario fotos
 
-## Laravel Sponsors
+![](assets/img/calendario.mes.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![](assets/img/calendario.semana.png)
 
-### Premium Partners
+![](assets/img/calendario.dia.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+![](assets/img/calendario.agenda.png)
 
-## Contributing
+![](assets/img/calendario.formulario.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![](assets/img/calendario.colores.1.png)
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![](assets/img/calendario.colores.2.png)
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[MIT license](https://opensource.org/licenses/MIT).
