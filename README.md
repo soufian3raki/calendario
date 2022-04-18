@@ -19,7 +19,7 @@ Una vez hayamos clonado el repositorio de nuestro proyecto Laravel en local, deb
 
 ## Instalar dependencias
 
-Instalaremos con [Composer](), el manejador de dependencias para PHP, las dependencias definidos en el archivo `composer.json`. Para ello abriremos una terminal en la `carpeta del proyecto` y ejecutaremos:
+Instalaremos con [Composer](https://getcomposer.org/), el manejador de dependencias para PHP, las dependencias definidos en el archivo `composer.json`. Para ello abriremos una terminal en la `carpeta del proyecto` y ejecutaremos:
 ```
 composer install
 ```
